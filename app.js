@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 });
 
+const fs = require("fs")
+console.log(fs.existsSync("./db/data.sqlite3"))
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });

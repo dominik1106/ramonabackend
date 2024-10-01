@@ -1,7 +1,7 @@
 const sql = require("knex")({
     client: "better-sqlite3",
     connection: {
-        filename: process.env.SQLITE_DB,
+        filename: "./db/data.sqlite3",
     },
     useNullAsDefault: true,
 });
