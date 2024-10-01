@@ -12,6 +12,7 @@ router.get("/transaction/:id", async (req, res) => {
         console.log(error);
         return res.status(500).json({"error": error.message});
     }
+    console.log(transaction, typeof transaction)
     res.status(200).json(transaction);
 });
 
