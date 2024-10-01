@@ -4,8 +4,8 @@ const Accounts = require("./accounts");
 /**
  * An account sends another account a certain amount of ramonas
  * 
- * @param {number} sender The discord id of the sender
- * @param {number} receiver The discord id of the receiver
+ * @param {string} sender The discord id of the sender
+ * @param {string} receiver The discord id of the receiver
  * @param {number} amount How much the sender wants to transfer
  * @param {string} note The reason of the transaction
  * @returns The newly created transaction
@@ -53,7 +53,7 @@ async function createTransaction(sender, receiver, amount, note) {
 
 /**
  * 
- * @param {number} id The id of the transaction
+ * @param {string} id The id of the transaction
  * @returns Either the details of the transaction or null in the case that the transaction id is not found
  */
 async function getTransaction(id) {
