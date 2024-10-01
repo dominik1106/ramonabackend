@@ -31,7 +31,7 @@ router.get("/transactions", async (req, res) => {
 router.get("/account/:id", async (req, res) => {
     const id = Number(req.params.id);
 
-    console.log("Getting Account: " + id);
+    console.log("Getting Account: " + id + " " + typeof id);
     
     try {
         var account = await Accounts.getAccount(id);
