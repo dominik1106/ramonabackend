@@ -12,7 +12,9 @@ router.get("/transaction/:id", async (req, res) => {
         console.log(error);
         return res.status(500).json({"error": error.message});
     }
-    console.log(transaction, typeof transaction)
+    if(typeof transaction === "undefined") {
+        res.status(404).json({"error": "Transaktions-ID nicht gefunden!"});
+    }
     res.status(200).json(transaction);
 });
 
