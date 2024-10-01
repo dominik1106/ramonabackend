@@ -29,7 +29,7 @@ router.get("/transactions", async (req, res) => {
 });
 
 router.get("/account/:id", async (req, res) => {
-    const id = Number(req.params.id);
+    const id = Number(req.params.id).toString();
 
     console.log("Getting Account: " + id + " " + typeof id);
     
