@@ -29,13 +29,14 @@ router.get("/transactions", async (req, res) => {
 });
 
 router.get("/account/:id", async (req, res) => {
-    const id = Number(req.params.id).toString();
+    const id = req.params.id;
 
     console.log("Getting Account: " + id + " " + typeof id);
     
     try {
         var account = await Accounts.getAccount(id);
         if(typeof account === "undefined") {
+            console.log("Account does not exist")
             account = await Accounts.createAccount(id);
         }
     } catch(error) {
